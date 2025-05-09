@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Error</title>
+</head>
+<body>
+<h1>Error</h1>
+<p><strong>Timestamp:</strong> <span th:text="${timestamp}"></span></p>
+<p><strong>Status:</strong> <span th:text="${status}"></span></p>
+<p><strong>Error:</strong> <span th:text="${error}"></span></p>
+<p><strong>Message:</strong> <span th:text="${message}"></span></p>
+<p><strong>Path:</strong> <span th:text="${path}"></span></p>
+<p><strong>Exception:</strong> <span th:text="${exception}"></span></p>
+<pre th:if="${trace}" th:text="${trace}">No stack trace</pre>
+</body>
+</html>

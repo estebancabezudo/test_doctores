@@ -1,0 +1,52 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Agregar Cita</title>
+</head>
+<body>
+<h1>Agregar nueva cita</h1>
+<a href="/">Home</a><br><br>
+
+<form method="post" action="/appointments">
+
+    <label>Nombre del paciente:
+        <input type="text" name="patient"/>
+    </label><br/>
+
+    <label>Doctor:
+        <select name="doctorId">
+            <option th:each="doc : ${doctors}" th:value="${doc.id}"
+                    th:text="${doc.name + ' ' + doc.lastName}">Doctor
+            </option>
+        </select>
+    </label><br/>
+
+    <label>Consultorio:
+        <select name="officeId">
+            <option th:each="office : ${offices}" th:value="${office.id}"
+                    th:text="'Oficina ' + ${office.number} + ' - Piso ' + ${office.floor}">Oficina
+            </option>
+        </select>
+    </label><br/>
+
+    <label>Fecha:
+        <input type="date" name="date">
+    </label><br/>
+    <label>Hora:
+        <select name="hour">
+            <option value="09:00">09:00</option>
+            <option value="10:00">10:00</option>
+            <option value="11:00">11:00</option>
+            <option value="12:00">12:00</option>
+            <option value="13:00">13:00</option>
+            <option value="16:00">16:00</option>
+            <option value="17:00">17:00</option>
+            <option value="18:00">18:00</option>
+            <option value="19:00">19:00</option>
+            <option value="20:00">20:00</option>
+        </select>
+    </label>
+
+    <button type="submit">Guardar</button>
+</form>
+</body>
+</html>
